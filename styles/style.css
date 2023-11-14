@@ -1,5 +1,256 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: var(--main-font-family);
+  background-color: var(--main-bg-color);
+  /* font-size: var(--content-text-font-size); */
+  background-image: var(--page-background);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header {
+  position: relative;
+  display: grid;
+  /* grid-template-columns: 1fr, 1fr; */
+  grid-template-rows: 1fr,min-content, 1fr;
+  /* уточнить значение мин хейт */
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 660px;
+  margin-bottom: 40px;
+  padding: 10px 10px 0px 10px; /* на планшете и дектопе увеличивается до 20px */
+}
+
+.decorative_inscription {
+  /* делаем надпись REC */
+  position: absolute;
+  top: 20px;
+  right: 38px;
+  color: var(--accent-color);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 25px; /* 138% */
+}
+
+.decorative_inscription::after {
+  /* делаем точку после REC */
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 42px;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background-color: var(--accent-color);
+  /* box-shadow:(0 0 4px 3px var(--accent-color)); - не работает свойство */
+}
+
+.decorated-zone::before {
+  /* верхний правый уголок */
+  content: "";
+  position: absolute;
+  top: 10px; /* на планшете и дектопе увеличивается до 20px */
+  right: 10px; /* на планшете и дектопе увеличивается до 20px */
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decorated-zone-color);
+  border-right: 1px solid var(--decorated-zone-color);
+  border-bottom: none;
+  border-left: none;
+}
+
+.decorated-zone::after {
+   /* нижний левый уголок */
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--decorated-zone-color);
+  border-left: 1px solid var(--decorated-zone-color);
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-self: end;
+  padding-top: 71px;
+  padding-bottom: 62px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 4px 13px;
+  color: var(--decorated-zone-color);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 18px; /* 100% */
+  background-color: transparent;
+}
+
+.header__theme-menu-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--decorated-zone-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-outline-hover-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--decorated-zone-color);
+  outline: none;
+}
+
+.page_title {
+  justify-self: left;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: var(--title-text-color);
+  font-size: var(--main-title-font-size);
+  line-height: 0.85em;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header_description {
+  display: block;
+  justify-self: right;
+  height: max-content;
+  margin-top: 53px;
+  margin-bottom: 55px;
+  color: var(--chapter-title-color);
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+}
+
+.title-decor {
+  /* Задаем контрастный фон заголовкам */
+  background-color: var(--accent-color);
+}
+
+.main {
+  padding: 0px 10px 0px 10px; /* на планшете и дектопе увеличивается до 20px */
+}
+
+.section_header {
+  margin-top: 50px;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+}
+
+.chapter_title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--chapter-title-color);
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+}
+
+.chapter_text {
+  color: var(--section-text-color);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+}
+
+/* ссылки в тексте */
+
+.chapter_text_link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.chapter_text_link:hover {
+  text-decoration: underline;
+}
+
+.chapter_text_link:focus-visible {
+  outline: none;
+}
+
+.chapter_text_link:focus-visible {
+  outline: 1px solid var(--link-outline-color);
+}
+
+.advice_title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--chapter-title-color);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+}
+
+/* Галерея */
+
+.gallery_title {
+  margin-bottom: 10px;
+  color: var(--chapter-title-color);
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+}
+
+.picture_container_list {
+  display: grid;
+  gap: 10px; /* - будет переопределен на дектопе */
+  /* grid-template-columns: repeat(3, 1fr);
+  list-style-type: none; */
+}
+
+.picture_container_item {
+  /* block-size: ; */
+  object-fit: cover;
+  object-position: center;
+  list-style-type: none;
+}
+
+.picture_container_item_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Футер */
+
+.footer {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  margin-top: 40px;
+  padding: 0px 10px 10px 10px;
+}
+
+.footer_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: var(--main-title-font-size);
+  font-style: normal;
+  line-height: 82.5%; /* 99px */
+  text-shadow: 2px 2px 0px var(--accent-color);
 }
