@@ -2,8 +2,9 @@
 
 .page {
   font-family: var(--main-font-family);
+  font-size: var(--content-text-font-size);
+  font-style: normal;
   background-color: var(--main-bg-color);
-  /* font-size: var(--content-text-font-size); */
   background-image: var(--page-background);
   background-position: center;
   background-size: cover;
@@ -15,24 +16,22 @@
   position: relative;
   display: grid;
   /* grid-template-columns: 1fr, 1fr; */
-  grid-template-rows: 1fr,min-content, 1fr;
+  grid-template-rows: 1fr, min-content, 1fr;
   /* уточнить значение мин хейт */
   min-width: 100vw;
   height: 100vh;
   min-height: 660px;
-  margin-bottom: 40px;
-  padding: 10px 10px 0px 10px; /* на планшете и дектопе увеличивается до 20px */
+  margin-bottom: 0px;
+  padding: var(--main-padding);
 }
 
 .decorative_inscription {
   /* делаем надпись REC */
   position: absolute;
-  top: 20px;
-  right: 38px;
+  top: var(--main-padding);
+  right: calc(var(--main-padding) + 28px);
   color: var(--accent-color);
   font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
   line-height: 25px; /* 138% */
 }
 
@@ -45,16 +44,17 @@
   width: 9px;
   height: 9px;
   border-radius: 999px;
+  box-shadow: 0px 0px 3px 4px var(--accent-color);
   background-color: var(--accent-color);
-  /* box-shadow:(0 0 4px 3px var(--accent-color)); - не работает свойство */
+  /* var(--accent-color) */
 }
 
 .decorated-zone::before {
   /* верхний правый уголок */
   content: "";
   position: absolute;
-  top: 10px; /* на планшете и дектопе увеличивается до 20px */
-  right: 10px; /* на планшете и дектопе увеличивается до 20px */
+  top: var(--main-padding);
+  right: var(--main-padding);
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -65,11 +65,11 @@
 }
 
 .decorated-zone::after {
-   /* нижний левый уголок */
+  /* нижний левый уголок */
   content: "";
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: var(--main-padding);
+  left: var(--main-padding);
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -80,7 +80,7 @@
 .header__theme-menu {
   display: flex;
   justify-self: end;
-  padding-top: 71px;
+  padding-top: 61px;
   padding-bottom: 62px;
 }
 
@@ -89,8 +89,6 @@
   padding: 4px 13px;
   color: var(--decorated-zone-color);
   font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
   line-height: 18px; /* 100% */
   background-color: transparent;
 }
@@ -115,8 +113,6 @@
 
 .page_title {
   justify-self: left;
-  padding-top: 0px;
-  padding-bottom: 0px;
   color: var(--title-text-color);
   font-size: var(--main-title-font-size);
   line-height: 0.85em;
@@ -131,8 +127,6 @@
   margin-bottom: 55px;
   color: var(--chapter-title-color);
   font-weight: 700;
-  font-size: 18px;
-  font-style: normal;
   line-height: 23.4px; /* 130% */
 }
 
@@ -142,16 +136,19 @@
 }
 
 .main {
-  padding: 0px 10px 0px 10px; /* на планшете и дектопе увеличивается до 20px */
+  padding: var(--main-padding);
 }
 
 .section_header {
   margin-top: 50px;
-  color: var(--accent-color);
+  color: var(--section-header-color);
   font-weight: 700;
-  font-size: 18px;
-  font-style: normal;
+  font-size: inherit;
   line-height: 23.4px; /* 130% */
+}
+
+.short_margin {
+  margin-top: 30px;
 }
 
 .chapter_title {
@@ -159,16 +156,13 @@
   margin-bottom: 10px;
   color: var(--chapter-title-color);
   font-weight: 700;
-  font-size: 18px;
-  font-style: normal;
+  font-size: inherit;
   line-height: 23.4px; /* 130% */
 }
 
 .chapter_text {
   color: var(--section-text-color);
   font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
   line-height: 23.4px; /* 130% */
 }
 
@@ -183,7 +177,7 @@
   text-decoration: underline;
 }
 
-.chapter_text_link:focus-visible {
+.chapter_text_link:focus {
   outline: none;
 }
 
@@ -196,34 +190,57 @@
   margin-bottom: 10px;
   color: var(--chapter-title-color);
   font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
+  font-size: inherit;
   line-height: 23.4px; /* 130% */
 }
 
 /* Галерея */
 
 .gallery_title {
-  margin-bottom: 10px;
+  margin-bottom: var(--main-gap);
   color: var(--chapter-title-color);
   font-weight: 700;
-  font-size: 18px;
-  font-style: normal;
+  font-size: inherit;
   line-height: 23.4px; /* 130% */
 }
 
 .picture_container_list {
   display: grid;
-  gap: 10px; /* - будет переопределен на дектопе */
-  /* grid-template-columns: repeat(3, 1fr);
-  list-style-type: none; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--main-gap);
+  /* list-style-type: none; */
 }
 
-.picture_container_item {
-  /* block-size: ; */
+.picture_container_item_image {
   object-fit: cover;
   object-position: center;
-  list-style-type: none;
+}
+
+/* стили сетки картинок для мобилки: */
+
+.picture_container_item:nth-child(1) {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+.picture_container_item:nth-child(2) {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+.picture_container_item:nth-child(3) {
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+
+.picture_container_item:nth-child(4) {
+  grid-column: 1/4;
+  grid-row: 4/5;
+}
+
+.picture_container_item:nth-child(5) {
+  grid-column: 1/4;
+  grid-row: 5/6;
 }
 
 .picture_container_item_image {
@@ -238,8 +255,9 @@
   position: relative;
   display: flex;
   min-height: 100vh;
-  margin-top: 40px;
-  padding: 0px 10px 10px 10px;
+  margin-top: 29px;
+  padding: var(--main-padding);
+  /* - убрать лишний отступ в 10 px сверху */
 }
 
 .footer_title {
@@ -250,7 +268,47 @@
   color: var(--title-text-color);
   font-weight: 700;
   font-size: var(--main-title-font-size);
-  font-style: normal;
   line-height: 82.5%; /* 99px */
   text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+/* медиавыражения для адаптива под разные экраны */
+
+/* Переопределение стилей общих для планшета и десктопа*/
+
+@media (576px <= width) {
+  .picture_container_item:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .picture_container_item:nth-child(2) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .picture_container_item:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .picture_container_item:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .picture_container_item:nth-child(5) {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+}
+
+/* Переопределение стилей только для планшета*/
+
+@media (576px < width < 992px) {
+}
+
+/* Переопределение стилей только для десктопа*/
+
+@media (width >= 992) {
 }

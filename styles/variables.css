@@ -3,23 +3,38 @@
   и их переопределение под различные устройства
 */
 :root {
-  /* переменные темной темы */
+  /* переменные темной темы (вообще все существующие переменные) */
   --main-font-family: 'iBM Plex Mono', monospace;
-  --accent-color:#FF0070 ;
+  --main-title-font-size:clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --content-text-font-size:18px ;
   --page-background:url(../images/cover-image-dark.png) ;
+  --accent-color:#FF0070 ;
   --main-bg-color:#000028;
   --title-text-color:#DB00FF;
   --title-shadow-color:#FF0070;
-  --link-shadow-color:#FF0070 ;
-  --link-outline-color:#F1B2CE;
+  --decorated-zone-color:#FF0070 ;
+  --section-header-color: #FF0070;
   --section-text-color: #F1B2CE ;
   --chapter-title-color: #000028;
-  --decorated-zone-color:#FF0070 ;
+  --link-shadow-color:#FF0070 ;
+  --link-outline-color:#F1B2CE;
   --outline-color:#FF0070 ;
-  --main-title-font-size:clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --content-text-font-size:18px ;
-  --padding-mobile: 10px;
-  --padding-tablet_decktop: 20px;
   --button-outline-hover-color:rgba(255, 0, 112, 0.40);
+  --main-padding: 10px;
+  --main-gap: 10px;
+  
 }
+
+/* Переопределение переменных общих для планшета и десктопа*/
+
+@media (576px <= width) {
+  :root {
+    --main-padding: 20px;
+    --main-gap: 20px;
+  }
+}
+
+
+
+
 

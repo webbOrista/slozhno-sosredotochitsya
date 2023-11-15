@@ -9,23 +9,46 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+ 
+  /* а здесь пропиши только те переменные, которые переопределяются в светлой теме */
+  --page-background:url(../images/cover-image-light.png) ;
+  --accent-color:#FF8DCB ;
+  --main-bg-color:#fff;
+  --title-text-color:#FFC2E6;
+  --decorated-zone-color:#353430 ;
+  --section-header-color: #353430;
+  --section-text-color: #353430 ;
+  --chapter-title-color: #353430;
+  --link-shadow-color:#FF8DCB;
+  --link-outline-color:#353430;
+  --outline-color:#353430 ;
+  --button-outline-hover-color:rgba(50, 49, 45, 0.40);
   .decorative_inscription {
-    visibility: hidden;
-  }
-  --accent-color:#FF0070 ;
-  --page-background:url(../images/cover-image-dark.png) ;
-  --main-bg-color:#000028;
-  --title-text-color:#DB00FF;
-  --title-shadow-color:#FF0070;
-  --link-shadow-color:#FF0070 ;
-  --section-text-color:#F1B2CE ;
-  --decorated-zone-color:#FF0070 ;
-  --outline-color:#FF0070 ;
+    display: none;
+    }
 }
+
+/* Остальные стили */ 
+
 
 
 @media (prefers-color-scheme: light) {
 .page {
-      /* Дублируем переменные светлой темы, заменил root на page */    
+      /* Дублируем переменные светлой темы */    
+  --page-background:url(../images/cover-image-light.png) ;
+  --accent-color:#FF8DCB ;
+  --main-bg-color:#fff;
+  --title-text-color:#FFC2E6;
+  --decorated-zone-color:#353430 ;
+  --section-header-color: #353430;
+  --section-text-color: #353430 ;
+  --chapter-title-color: #353430;
+  --link-shadow-color:#FF8DCB;
+  --link-outline-color:#353430;
+  --outline-color:#353430 ;
+  --button-outline-hover-color:rgba(50, 49, 45, 0.40);
+  .decorative_inscription {
+    display: none;
+    }
   }
 }
