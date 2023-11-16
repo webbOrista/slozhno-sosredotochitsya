@@ -257,7 +257,6 @@
   min-height: 100vh;
   margin-top: 29px;
   padding: var(--main-padding);
-  /* - убрать лишний отступ в 10 px сверху */
 }
 
 .footer_title {
@@ -306,8 +305,142 @@
 /* Переопределение стилей только для планшета*/
 
 @media (576px < width < 992px) {
-}
+  .header__theme-menu {
+    padding-top: 168px;
+    padding-bottom: 64px;
+  }
 
+  .page_title {
+    position: relative;
+    left: -20px;
+  }
+
+  .header_description {
+    width: 50%;
+  }
+
+  /* оформляем первый блок абзацев */
+
+  .left_alignation_top .section_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+  }
+
+  .left_alignation_top .section_header {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-top: 40px;
+  }
+
+  .left_alignation_top .chapter_wrapper:first-child {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 1/2;
+  }
+
+  .left_alignation_top .chapter_wrapper:last-child {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 2/3;
+  }
+
+  .left_alignation_top .chapter:first-child {
+    margin-top: 40px;
+  }
+
+  .left_alignation_top .chapter:last-child {
+    margin-top: 19px;
+  }
+
+  /* оформляем второй блок абзацев */
+
+  .width_alignation .section_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+  }
+
+  .width_alignation .section_header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 80px;
+  }
+
+  .chapter_wrapper_middle:nth-child(1) {
+    display: block;
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+
+  .chapter_wrapper_middle:nth-child(2) {
+    display: block;
+    grid-column: 1/4;
+    grid-row: 3/4;
+  }
+
+  .chapter_wrapper_middle:nth-child(3) {
+    display: block;
+    grid-column: 1/4;
+    grid-row: 4/5;
+  }
+
+  /* оформляем третий блок абзацев */
+
+  .left_alignation_bottom .section_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+  }
+
+  .left_alignation_bottom .section_header {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-top: 80px;
+  }
+
+  .chapter_wrapper_bottom:nth-child(1) {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 1/2;
+  }
+
+  .chapter_wrapper_bottom .chapter:first-child {
+    margin-top: 79px;
+  }
+
+  .chapter_wrapper_bottom:nth-child(2) {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 2/3;
+  }
+
+  .chapter_wrapper_bottom .chapter:nth-child(3) {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+
+  .chapter_wrapper_bottom .chapter:nth-child(4) {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 5/6;
+  }
+
+  .chapter_wrapper_bottom .chapter:nth-child(5) {
+    display: block;
+    grid-column: 2/4;
+    grid-row: 5/6;
+  }
+
+  .gallery_title {
+    margin-top: 80px;
+  }
+
+  .footer {
+    margin-top: 40px;
+  }
+}
 /* Переопределение стилей только для десктопа*/
 
 @media (width >= 992) {
