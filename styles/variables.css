@@ -4,39 +4,32 @@
 */
 :root {
   /* переменные темной темы (вообще все существующие переменные) */
-  --main-font-family: 'iBM Plex Mono', monospace;
-  --main-title-font-size:clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --content-text-font-size:18px ;
-  --page-background:url(../images/cover-image-dark.png) ;
-  --accent-color:#FF0070 ;
-  --main-bg-color:#000028;
-  --title-text-color:#DB00FF;
-  --title-shadow-color:#FF0070;
-  --decorated-zone-color:#FF0070 ;
-  --section-header-color: #FF0070;
-  --section-text-color: #F1B2CE ;
+  --main-font-family: "iBM Plex Mono", monospace;
+  --main-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --content-text-font-size: 18px;
+  --page-background: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --main-bg-color: #000028;
+  --title-text-color: #db00ff;
+  --title-shadow-color: #ff0070;
+  --decorated-zone-color: #ff0070;
+  --section-header-color: #ff0070;
+  --section-text-color: #f1b2ce;
   --chapter-title-color: #000028;
-  --link-shadow-color:#FF0070 ;
-  --link-outline-color:#F1B2CE;
-  --outline-color:#FF0070 ;
-  --button-outline-hover-color:rgba(255, 0, 112, 0.40);
+  --link-shadow-color: #ff0070;
+  --link-outline-color: #f1b2ce;
+  --outline-color: #ff0070;
+  --button-outline-hover-color: rgba(255, 0, 112, 0.4);
   --main-padding: 10px;
   --main-gap: 10px;
-  
 }
 
 /* Переопределение переменных общих для планшета и десктопа*/
 
-@media (576px <= width){
+@media (576px <= width) {
   :root {
     --main-padding: 20px;
     --main-gap: 20px;
     --main-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
-
-
-
-
-
-
