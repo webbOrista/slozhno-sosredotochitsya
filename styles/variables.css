@@ -28,12 +28,12 @@
 /* Переопределение переменных общих для планшета и десктопа*/
 
 @media (576px <= width) {
-  :root {
-    --main-padding: 20px;
-    --main-gap: 20px;
-    --main-title-font-size:clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) 
-  
-  }
+:root {
+--main-padding: 20px;
+--main-gap: 20px;
+--main-title-font-size:clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) 
+
+}
 
 
 }
