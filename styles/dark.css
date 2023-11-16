@@ -17,6 +17,7 @@
   --title-text-color:#DB00FF;
   --title-shadow-color:#FF0070;
   --decorated-zone-color:#FF0070 ;
+  --section-header-color: #FF0070;
   --section-text-color: #F1B2CE ;
   --chapter-title-color: #000028;
   --link-shadow-color:#FF0070 ;
@@ -24,3 +25,4 @@
   --outline-color:#FF0070 ;
   --button-outline-hover-color:rgba(255, 0, 112, 0.40);
 }
+

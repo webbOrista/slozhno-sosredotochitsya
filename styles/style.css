@@ -16,10 +16,10 @@
   position: relative;
   display: grid;
   /* grid-template-columns: 1fr, 1fr; */
-  grid-template-rows: 1fr, min-content, 1fr;
+  grid-template-rows: 1fr min-content 1fr;
   /* уточнить значение мин хейт */
   min-width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   min-height: 660px;
   margin-bottom: 0px;
   padding: var(--main-padding);
@@ -60,8 +60,6 @@
   height: 25px;
   border-top: 1px solid var(--decorated-zone-color);
   border-right: 1px solid var(--decorated-zone-color);
-  border-bottom: none;
-  border-left: none;
 }
 
 .decorated-zone::after {
@@ -212,6 +210,8 @@
 }
 
 .picture_container_item_image {
+  max-width: 1100px;
+  max-height: 1100px;
   object-fit: cover;
   object-position: center;
 }
@@ -300,20 +300,6 @@
     grid-column: 2/4;
     grid-row: 3/4;
   }
-}
-
-/* Переопределение стилей только для планшета*/
-
-@media (576px < width < 992px) {
-  .header__theme-menu {
-    padding-top: 168px;
-    padding-bottom: 64px;
-  }
-
-  .page_title {
-    position: relative;
-    left: -20px;
-  }
 
   .header_description {
     width: 50%;
@@ -351,38 +337,6 @@
 
   .left_alignation_top .chapter:last-child {
     margin-top: 19px;
-  }
-
-  /* оформляем второй блок абзацев */
-
-  .width_alignation .section_wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 40px;
-  }
-
-  .width_alignation .section_header {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    margin-top: 80px;
-  }
-
-  .chapter_wrapper_middle:nth-child(1) {
-    display: block;
-    grid-column: 1/4;
-    grid-row: 2/3;
-  }
-
-  .chapter_wrapper_middle:nth-child(2) {
-    display: block;
-    grid-column: 1/4;
-    grid-row: 3/4;
-  }
-
-  .chapter_wrapper_middle:nth-child(3) {
-    display: block;
-    grid-column: 1/4;
-    grid-row: 4/5;
   }
 
   /* оформляем третий блок абзацев */
@@ -433,6 +387,60 @@
     grid-row: 5/6;
   }
 
+  /* объявляем гридом центральную секцию */
+
+  .width_alignation .section_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+  }
+}
+
+/* Переопределение стилей только для планшета*/
+
+@media (576px < width < 992px) {
+  .header__theme-menu {
+    padding-top: 168px;
+    padding-bottom: 171px;
+  }
+
+  .page_title {
+    position: relative;
+    left: -20px;
+  }
+
+  .header_description {
+    margin-top: 160px;
+  }
+
+  /* оформляем параграфы центрального блока абзацев */
+
+  .width_alignation .section_header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 80px;
+  }
+
+  .chapter_wrapper_middle:nth-child(1) {
+    display: block;
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+
+  .chapter_wrapper_middle:nth-child(2) {
+    display: block;
+    grid-column: 1/4;
+    grid-row: 3/4;
+  }
+
+  .chapter_wrapper_middle:nth-child(3) {
+    display: block;
+    grid-column: 1/4;
+    grid-row: 4/5;
+  }
+
+  /* oстальные стили */
+
   .gallery_title {
     margin-top: 80px;
   }
@@ -441,7 +449,73 @@
     margin-top: 40px;
   }
 }
+
 /* Переопределение стилей только для десктопа*/
 
-@media (width >= 992) {
+@media (width >= 992px) {
+  .header__theme-menu {
+    display: flex;
+    justify-self: center;
+    align-items: top;
+    padding-top: 0px;
+    padding-bottom: 201px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+  }
+
+  .page_title {
+    position: relative;
+    right: 20px;
+  }
+
+  .left_alignation_top .section_wrapper {
+    column-gap: 22px;
+  }
+
+  .left_alignation_bottom .section_wrapper {
+    column-gap: 22px;
+  }
+
+  /* переопределение положения блоков центральной секции абзацев */
+
+  .width_alignation .section_header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 80px;
+  }
+
+  .width_alignation .section_wrapper {
+    column-gap: 40px;
+  }
+
+  .chapter_wrapper_middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    column-gap: 20px;
+  }
+
+  /* остальные стили */
+
+  .header__theme-menu {
+    padding-bottom: 261px;
+  }
+
+  .header_description {
+    margin-top: 111px;
+  }
+
+  .gallery_title {
+    margin-top: 78px;
+  }
+
+  .footer {
+    margin-top: 40px;
+  }
 }
