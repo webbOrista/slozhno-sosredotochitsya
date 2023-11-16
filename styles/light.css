@@ -33,8 +33,7 @@
 
 
 @media (prefers-color-scheme: light) {
-.page {
-      /* Дублируем переменные светлой темы */    
+.page { 
   --page-background:url(../images/cover-image-light.png) ;
   --accent-color:#FF8DCB ;
   --main-bg-color:#fff;
