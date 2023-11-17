@@ -9,46 +9,39 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
- 
+
   /* а здесь пропиши только те переменные, которые переопределяются в светлой теме */
-  --page-background:url(../images/cover-image-light.png) ;
-  --accent-color:#FF8DCB ;
-  --main-bg-color:#fff;
-  --title-text-color:#FFC2E6;
-  --decorated-zone-color:#353430 ;
+  --page-background: url(../images/cover-image-light.png);
+  --accent-color: #ff8dcb;
+  --main-bg-color: #fff;
+  --title-text-color: #ffc2e6;
+  --decorated-zone-color: #353430;
   --section-header-color: #353430;
-  --section-text-color: #353430 ;
+  --section-text-color: #353430;
   --chapter-title-color: #353430;
-  --link-shadow-color:#FF8DCB;
-  --link-outline-color:#353430;
-  --outline-color:#353430 ;
-  --button-outline-hover-color:rgba(50, 49, 45, 0.40);
-  .decorative_inscription {
-    display: none;
-    }
+  --link-shadow-color: #ff8dcb;
+  --link-outline-color: #353430;
+  --outline-color: #353430;
+  --button-outline-hover-color: rgba(50, 49, 45, 0.4);
+  --decoration-visibility: hidden;
 }
 
-/* Остальные стили */ 
-
-
+/* Остальные стили */
 
 @media (prefers-color-scheme: light) {
-.page {
-  
---page-background:url(../images/cover-image-light.png) ;
---accent-color:#FF8DCB ;
---main-bg-color:#fff;
---title-text-color:#FFC2E6;
---decorated-zone-color:#353430 ;
---section-header-color: #353430;
---section-text-color: #353430 ;
---chapter-title-color: #353430;
---link-shadow-color:#FF8DCB;
---link-outline-color:#353430;
---outline-color:#353430 ;
---button-outline-hover-color:rgba(50, 49, 45, 0.40);
-  .decorative_inscription {
-    display: none;
-    }
+  .page {
+    --page-background: url(../images/cover-image-light.png);
+    --accent-color: #ff8dcb;
+    --main-bg-color: #fff;
+    --title-text-color: #ffc2e6;
+    --decorated-zone-color: #353430;
+    --section-header-color: #353430;
+    --section-text-color: #353430;
+    --chapter-title-color: #353430;
+    --link-shadow-color: #ff8dcb;
+    --link-outline-color: #353430;
+    --outline-color: #353430;
+    --button-outline-hover-color: rgba(50, 49, 45, 0.4);
+    --decoration-visibility: hidden;
   }
 }

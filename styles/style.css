@@ -1,6 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  margin: 0 auto;
   font-family: var(--main-font-family);
   font-size: var(--content-text-font-size);
   font-style: normal;
@@ -15,12 +16,9 @@
 .header {
   position: relative;
   display: grid;
-  /* grid-template-columns: 1fr, 1fr; */
   grid-template-rows: 1fr min-content 1fr;
-  /* уточнить значение мин хейт */
-  min-width: 100vw;
   height: 100vh;
-  min-height: 660px;
+  min-height: 668px;
   margin-bottom: 0px;
   padding: var(--main-padding);
 }
@@ -30,9 +28,11 @@
   position: absolute;
   top: var(--main-padding);
   right: calc(var(--main-padding) + 28px);
+  visibility: var(--decoration-visibility);
   color: var(--accent-color);
   font-weight: 400;
   line-height: 25px; /* 138% */
+  text-transform: uppercase;
 }
 
 .decorative_inscription::after {
@@ -43,10 +43,9 @@
   left: 42px;
   width: 9px;
   height: 9px;
-  border-radius: 999px;
-  box-shadow: 0px 0px 3px 4px var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
   background-color: var(--accent-color);
-  /* var(--accent-color) */
 }
 
 .decorated-zone::before {
@@ -78,8 +77,7 @@
 .header__theme-menu {
   display: flex;
   justify-self: end;
-  padding-top: 61px;
-  padding-bottom: 62px;
+  align-self: center;
 }
 
 .header__theme-menu-button {
@@ -88,7 +86,9 @@
   color: var(--decorated-zone-color);
   font-weight: 400;
   line-height: 18px; /* 100% */
+  text-transform: lowercase;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-item:not(:last-child) {
@@ -111,6 +111,7 @@
 
 .page_title {
   justify-self: left;
+  align-self: center;
   color: var(--title-text-color);
   font-size: var(--main-title-font-size);
   line-height: 0.85em;
@@ -120,9 +121,8 @@
 .header_description {
   display: block;
   justify-self: right;
+  align-self: center;
   height: max-content;
-  margin-top: 53px;
-  margin-bottom: 55px;
   color: var(--chapter-title-color);
   font-weight: 700;
   line-height: 23.4px; /* 130% */
@@ -151,7 +151,6 @@
 
 .chapter_title {
   margin-top: 20px;
-  margin-bottom: 10px;
   color: var(--chapter-title-color);
   font-weight: 700;
   font-size: inherit;
@@ -159,6 +158,7 @@
 }
 
 .chapter_text {
+  padding-top: 10px;
   color: var(--section-text-color);
   font-weight: 400;
   line-height: 23.4px; /* 130% */
@@ -172,7 +172,7 @@
 }
 
 .chapter_text_link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid var(--section-text-color);
 }
 
 .chapter_text_link:focus {
@@ -185,7 +185,6 @@
 
 .advice_title {
   margin-top: 20px;
-  margin-bottom: 10px;
   color: var(--chapter-title-color);
   font-weight: 400;
   font-size: inherit;
@@ -206,14 +205,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--main-gap);
-  /* list-style-type: none; */
 }
 
 .picture_container_item_image {
   display: block;
   width: 100%;
-  height: 100%;
   max-width: 1100px;
+  height: 100%;
   max-height: 1100px;
   object-fit: cover;
   object-position: center;
@@ -246,14 +244,13 @@
   grid-row: 5/6;
 }
 
-
-
 /* Футер */
 
 .footer {
   position: relative;
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 667px;
   margin-top: 29px;
   padding: var(--main-padding);
 }
@@ -275,6 +272,11 @@
 /* Переопределение стилей общих для планшета и десктопа*/
 
 @media (576px <= width) {
+  .header_description {
+    display: flex;
+    align-items: center;
+  }
+
   .picture_container_item:nth-child(1) {
     grid-column: 1/3;
     grid-row: 1/2;
@@ -344,46 +346,30 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
+    margin-top: 80px;
   }
 
   .left_alignation_bottom .section_header {
     grid-column: 1/2;
-    grid-row: 2/3;
-    margin-top: 80px;
+    grid-row: 1/3;
+    margin-top: 0px;
   }
 
-  .chapter_wrapper_bottom:nth-child(1) {
+  .left_alignation_bottom .advice_group_title {
     display: block;
     grid-column: 2/4;
     grid-row: 1/2;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 
-  .chapter_wrapper_bottom .chapter:first-child {
-    margin-top: 79px;
-  }
-
-  .chapter_wrapper_bottom:nth-child(2) {
-    display: block;
+  .chapter_wrapper_bottom {
     grid-column: 2/4;
-    grid-row: 2/3;
+    grid-row: 2/6;
   }
 
-  .chapter_wrapper_bottom .chapter:nth-child(3) {
-    display: block;
-    grid-column: 2/4;
-    grid-row: 4/5;
-  }
-
-  .chapter_wrapper_bottom .chapter:nth-child(4) {
-    display: block;
-    grid-column: 2/4;
-    grid-row: 5/6;
-  }
-
-  .chapter_wrapper_bottom .chapter:nth-child(5) {
-    display: block;
-    grid-column: 2/4;
-    grid-row: 5/6;
+  .chapter_wrapper_bottom .first_list_item {
+    margin-top: 9px;
   }
 
   /* объявляем гридом центральную секцию */
@@ -398,18 +384,9 @@
 /* Переопределение стилей только для планшета*/
 
 @media (576px < width < 992px) {
-  .header__theme-menu {
-    padding-top: 168px;
-    padding-bottom: 171px;
-  }
-
   .page_title {
     position: relative;
     left: -20px;
-  }
-
-  .header_description {
-    margin-top: 160px;
   }
 
   /* оформляем параграфы центрального блока абзацев */
@@ -455,11 +432,10 @@
   .header__theme-menu {
     display: flex;
     justify-self: center;
-    align-items: top;
-    padding-top: 0px;
-    padding-bottom: 261px;
+    align-self: flex-start;
+    padding: 0px;
   }
- 
+
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
@@ -493,7 +469,7 @@
 
   .chapter_wrapper_middle {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: column;
     grid-column: 1/4;
     grid-row: 2/3;
@@ -501,11 +477,6 @@
   }
 
   /* остальные стили */
-
-
-  .header_description {
-    margin-top: 111px;
-  }
 
   .gallery_title {
     margin-top: 78px;

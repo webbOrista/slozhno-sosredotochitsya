@@ -11,18 +11,18 @@
   */
 
   /* Дублируем переменные для тёмной темы */
-  --page-background:url(../images/cover-image-dark.png) ;
-  --accent-color:#FF0070 ;
-  --main-bg-color:#000028;
-  --title-text-color:#DB00FF;
-  --title-shadow-color:#FF0070;
-  --decorated-zone-color:#FF0070 ;
-  --section-header-color: #FF0070;
-  --section-text-color: #F1B2CE ;
+  --page-background: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --main-bg-color: #000028;
+  --title-text-color: #db00ff;
+  --title-shadow-color: #ff0070;
+  --decorated-zone-color: #ff0070;
+  --section-header-color: #ff0070;
+  --section-text-color: #f1b2ce;
   --chapter-title-color: #000028;
-  --link-shadow-color:#FF0070 ;
-  --link-outline-color:#F1B2CE;
-  --outline-color:#FF0070 ;
-  --button-outline-hover-color:rgba(255, 0, 112, 0.40);
+  --link-shadow-color: #ff0070;
+  --link-outline-color: #f1b2ce;
+  --outline-color: #ff0070;
+  --button-outline-hover-color: rgba(255, 0, 112, 0.4);
+  --decoration-visibility: visible;
 }
-

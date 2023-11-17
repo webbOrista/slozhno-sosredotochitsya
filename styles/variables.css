@@ -22,6 +22,7 @@
   --button-outline-hover-color: rgba(255, 0, 112, 0.4);
   --main-padding: 10px;
   --main-gap: 10px;
+  --decoration-visibility: visible;
 }
 
 /* Переопределение переменных общих для планшета и десктопа*/
