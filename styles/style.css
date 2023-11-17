@@ -275,6 +275,7 @@
   .header_description {
     display: flex;
     align-items: center;
+    width: 50%;
   }
 
   .picture_container_item:nth-child(1) {
@@ -300,10 +301,6 @@
   .picture_container_item:nth-child(5) {
     grid-column: 2/4;
     grid-row: 3/4;
-  }
-
-  .header_description {
-    width: 50%;
   }
 
   /* оформляем первый блок абзацев */
