@@ -1,9 +1,4 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
 :root {
-  /* переменные темной темы (вообще все существующие переменные) */
   --main-font-family: "iBM Plex Mono", monospace;
   --main-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --content-text-font-size: 18px;

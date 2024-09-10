@@ -1,5 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   margin: 0 auto;
   font-family: var(--main-font-family);
@@ -10,7 +8,6 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
